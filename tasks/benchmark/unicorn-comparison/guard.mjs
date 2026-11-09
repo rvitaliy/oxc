@@ -6,9 +6,12 @@ export function checkEnvironment() {
       [
         "NODE_OPTIONS",
         "NODE_V8_COVERAGE",
+        "NODE_COMPILE_CACHE",
+        "NODE_DISABLE_COMPILE_CACHE",
         "RUSTFLAGS",
         "CARGO_ENCODED_RUSTFLAGS",
         "CARGO_BUILD_RUSTFLAGS",
+        "CARGO_BUILD_TARGET",
       ].includes(name)
       || name.startsWith("CARGO_PROFILE_RELEASE_")
       || /^CARGO_TARGET_.*_RUSTFLAGS$/.test(name)

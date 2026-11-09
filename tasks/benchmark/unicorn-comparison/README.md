@@ -42,8 +42,8 @@ commit the binary.
 The default uses three untimed warmups and 20 samples per tool and case,
 alternating execution order; `--samples N` (1–20) and `--warmups N` (0–20)
 can override these. Each tool runs serially; Oxlint uses one thread. Warmups
-only warm the operating-system cache and do not persist a Node or Oxlint
-process. Choose a quiet machine, record competing activity, and repeat a full
+can populate operating-system and ESLint CLI-managed V8 compile caches. Each
+measurement starts a fresh process; no JIT process is retained. Choose a quiet machine, record competing activity, and repeat a full
 run when variation or system load is material. The report gives medians,
 quartiles, minimum/maximum and raw ordered samples; a ratio is the ratio of
 medians, not a confidence interval or a guarantee on other workloads.
@@ -64,14 +64,16 @@ Before timing each scenario, both tools print their resolved config. The runner
 requires exactly one enabled error-level rule, checks file and rule counts,
 parsing errors, exit status and expected per-file/per-line diagnostic identity
 and severity. It records column differences for review because diagnostic
-spans can legitimately differ. It stops on mismatch; investigate equivalence
+spans can legitimately differ. JSON column units may differ for Unicode; review
+recorded differences manually. It stops on mismatch; investigate equivalence
 before reporting any ratio. Both timing commands format JSON and send stdout to
-the null device, so formatter overhead remains included. No cache, fix,
-suggestion or warning suppression is enabled.
+the null device, so formatter overhead remains included. No lint-result cache,
+fix, suggestion or warning suppression is enabled. ESLint's default V8 compile
+cache remains enabled; its cache environment overrides are rejected.
 
 `results.json` records raw samples, order, checksums of each fixture and config,
 versions, source and benchmark commit IDs, start/end times, normalized CLI arguments,
-binary SHA-256 and machine characteristics without recording paths,
+binary SHA-256 and machine characteristics without recording absolute paths,
 hostnames or usernames. `report.md` is generated from those samples and can be regenerated with
 `node report.mjs results/full/results.json results/full/report.md`. Both
 outputs contain measured results only and must not be committed as universal

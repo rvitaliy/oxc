@@ -267,6 +267,11 @@ const buildRecord = {
 const report = {
   manifest,
   mode: preflightOnly ? "preflight" : smoke ? "smoke" : "measurement",
+  cachePolicy: {
+    eslintDefaultV8CompileCache: "enabled by ESLint CLI",
+    lintResultCache: false,
+    processReuse: false,
+  },
   startedAt,
   benchmarkHead,
   build: buildRecord,
