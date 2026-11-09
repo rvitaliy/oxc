@@ -15,22 +15,10 @@ use oxc_syntax::operator::UnaryOperator;
 
 use crate::{
     DetermineValueType, GlobalContext, ToBigInt, ToJsString, ToNumber, ValueType,
-    side_effects::MayHaveSideEffects,
     to_primitive::{ToPrimitive, ToPrimitiveResult},
 };
 
 use super::context::MayHaveSideEffectsContext;
-
-/// Whether an ArrayBuffer construction, including argument evaluation, is side-effect-free.
-///
-/// For the invocation alone, use [`is_pure_global_constructor`].
-pub fn is_valid_array_buffer<'a>(
-    args: &[Argument<'a>],
-    ctx: &impl MayHaveSideEffectsContext<'a>,
-) -> bool {
-    is_valid_array_buffer_length(args, ctx)
-        && !args.iter().any(|arg| arg.may_have_side_effects(ctx))
-}
 
 /// Whether ToIndex succeeds for a known length, with no options argument.
 /// Backing-store allocation failures are ignored under the minifier's allocation assumption.
