@@ -1,0 +1,1 @@
+{ "categories": { "correctness": "off" }, "rules": { "unicorn/no-invalid-response-options": "error" } }

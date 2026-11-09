@@ -1,0 +1,11 @@
+{
+  "rule": "unicorn/no-invalid-response-options",
+  "parentCommit": "49953cdc5ff212c07937fe302775ba3373aca140",
+  "parentPR": 29138,
+  "node": "26.12.1",
+  "eslint": "10.14.0",
+  "unicorn": "79.0.0",
+  "pnpm": "12.7.0",
+  "rust": "1.99.1",
+  "build": "cargo build --locked -p oxlint --release --features allocator"
+}
