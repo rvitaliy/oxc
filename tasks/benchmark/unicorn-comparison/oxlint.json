@@ -1,0 +1,8 @@
+{
+  "categories": {
+    "correctness": "off"
+  },
+  "rules": {
+    "unicorn/no-multiple-promise-resolver-calls": "error"
+  }
+}
