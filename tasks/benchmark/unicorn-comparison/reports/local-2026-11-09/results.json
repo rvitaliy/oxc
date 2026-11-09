@@ -1,0 +1,1770 @@
+{
+  "manifest": {
+    "rule": "unicorn/no-multiple-promise-resolver-calls",
+    "parentCommit": "9f9ea26781ccf223810e27e987ea1a62edb20bd3",
+    "parentPR": 29140,
+    "node": "26.12.1",
+    "eslint": "10.14.0",
+    "unicorn": "79.0.0",
+    "pnpm": "12.7.0",
+    "rust": "1.99.1",
+    "build": "cargo build --locked -p oxlint --release --features allocator"
+  },
+  "mode": "measurement",
+  "cachePolicy": {
+    "eslintDefaultV8CompileCache": "enabled by ESLint CLI",
+    "lintResultCache": false,
+    "processReuse": false
+  },
+  "startedAt": "2026-11-09T17:54:37.080Z",
+  "benchmarkHead": "c9a2d50846578caf86c387ea21527699ec8c248a",
+  "build": {
+    "sourcePRsha": "9f9ea26781ccf223810e27e987ea1a62edb20bd3",
+    "benchmarkHead": "9f9ea26781ccf223810e27e987ea1a62edb20bd3",
+    "buildArgv": [
+      "cargo",
+      "build",
+      "--locked",
+      "-p",
+      "oxlint",
+      "--release",
+      "--features",
+      "allocator",
+      "--message-format=json-render-diagnostics"
+    ],
+    "node": "26.12.1",
+    "pnpm": "12.7.0",
+    "rust": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "binarySha256": "3aefe732ad0d8ce06563b5450c0af1cedcda437438de38398a347693838a9077",
+    "nativeDiffEmpty": true,
+    "artifactProfile": {
+      "opt_level": "3",
+      "debuginfo": 0,
+      "debug_assertions": false,
+      "overflow_checks": false,
+      "test": false
+    }
+  },
+  "binarySha256": "3aefe732ad0d8ce06563b5450c0af1cedcda437438de38398a347693838a9077",
+  "versions": {
+    "node": "26.12.1",
+    "pnpm": "12.7.0",
+    "eslint": "10.14.0",
+    "unicorn": "79.0.0",
+    "oxlint": "Version: 1.93.0",
+    "rust": "rustc 1.99.1 (58cf8f9c3 2026-10-13)"
+  },
+  "machine": {
+    "platform": "darwin",
+    "release": "27.2.0",
+    "architecture": "arm64",
+    "cpu": "Apple M1 Max",
+    "logicalCores": 10,
+    "memoryBytes": 34359738368,
+    "loadAverage": [12.126953125, 11.90673828125, 10.65234375],
+    "loadAverageAfter": [15.9365234375, 13.4052734375, 11.37841796875]
+  },
+  "configurationSha256": {
+    "benchmark.json": "4dfbade45ff0315cd71785fc3bc190245ff3e678434323353d659aac021ce328",
+    "oxlint.json": "70b3801f94f043c98ddef5f5e456d450cff044bee6e8b658de3f92e2c67f0fdc",
+    "eslint.config.mjs": "7594e1dd1474d32de9fce4d6ed2862dbb2433cee4268ab9d612b9b4bce5062c4",
+    "spec.mjs": "bf963d517156d4edc8d8d47d6be3cebf5fecbab4e4768344cc4fc444ca0ae96d",
+    "pnpm-lock.yaml": "8849d4a7c2a5006a83cddec39b50edb14a2081b123a89f3efb17fdb55922bec9",
+    "package.json": "9a9d9398819e412fb3ec0bae075d6d223ec5fc72f1283ca157edf13a51910d2a",
+    "pnpm-workspace.yaml": "b379483d4293500af8e9d3e8d83b4b5a2ad1e844911cd7be7f7e274e4bb80666",
+    "run.mjs": "3b0b66c52cbbc36792186b5301e8054ac5e9d2d9174fbe64d041f5e7142b46b1",
+    "report.mjs": "5b5aec6fd09e34bf85a5df0d363d44936411da66151278b13480c4318c813be6",
+    "prepare.mjs": "35af753cce1002e1725a21d874a1ff63b30abb63cf68ac63f7a4aea5b27e606c",
+    "guard.mjs": "0712b9a4597a184834e9b00cc728f13c321b0038f8e6f2a64122e75778198dfe"
+  },
+  "preset": "default",
+  "samples": 20,
+  "warmups": 3,
+  "scenarios": [
+    {
+      "name": "empty",
+      "files": [
+        {
+          "name": "fixture-0.js",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expectedDiagnostics": 0
+        }
+      ],
+      "expectedDiagnostics": 0,
+      "columnDifferences": [],
+      "argv": {
+        "oxlint": [
+          ".cache/oxlint",
+          "--config",
+          "oxlint.json",
+          "--threads",
+          "1",
+          "--no-ignore",
+          "--disable-nested-config",
+          "-A",
+          "all",
+          "-D",
+          "unicorn/no-multiple-promise-resolver-calls",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/empty/fixture-0.js"
+        ],
+        "eslint": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--no-config-lookup",
+          "--config",
+          "eslint.config.mjs",
+          "--no-ignore",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/empty/fixture-0.js"
+        ]
+      },
+      "rawMilliseconds": {
+        "oxlint": [
+          9.584959, 5.313333, 7.7925, 17.313291, 5.831375, 5.644167, 10.589166, 9.897333, 6.037417,
+          5.699875, 6.525458, 7.840959, 12.764666, 7.685708, 11.071, 10.371166, 7.887917, 8.451417,
+          8.159333, 6.060084
+        ],
+        "eslint": [
+          724.134917, 671.244416, 527.427708, 662.904542, 570.291375, 454.4395, 579.99925,
+          589.073375, 671.264084, 676.192166, 741.914625, 582.006875, 739.362542, 503.667, 535.1155,
+          479.929333, 704.271791, 491.455541, 570.109666, 556.950958
+        ]
+      },
+      "executionOrder": [
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 7.777334
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 475.363
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 593.376167
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 6.641417
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 4.98
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 793.405417
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 724.134917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.584959
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.313333
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 671.244416
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 527.427708
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.7925
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.313291
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 662.904542
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 570.291375
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.831375
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.644167
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 454.4395
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 579.99925
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.589166
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.897333
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 589.073375
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 671.264084
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.037417
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.699875
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 676.192166
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 741.914625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.525458
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.840959
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 582.006875
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 739.362542
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.764666
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.685708
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 503.667
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 535.1155
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.071
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.371166
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 479.929333
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 704.271791
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.887917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 8.451417
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 491.455541
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 570.109666
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 8.159333
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.060084
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 556.950958
+        }
+      ],
+      "statistics": {
+        "oxlint": {
+          "min": 5.313333,
+          "q1": 6.05441725,
+          "median": 7.864438,
+          "q3": 10.01579125,
+          "max": 17.313291
+        },
+        "eslint": {
+          "min": 454.4395,
+          "q1": 533.193552,
+          "median": 581.0030624999999,
+          "q3": 672.4961045,
+          "max": 741.914625
+        }
+      },
+      "ratioOfMedians": 73.87725130517909
+    },
+    {
+      "name": "small-mixed",
+      "files": [
+        {
+          "name": "fixture-0.js",
+          "bytes": 1424,
+          "sha256": "626f73c138cc8c1b0f5ef96d8cf5cfeed1abf12b50a6a8cc107faa091ce1f656",
+          "expectedDiagnostics": 4
+        }
+      ],
+      "expectedDiagnostics": 4,
+      "columnDifferences": [],
+      "argv": {
+        "oxlint": [
+          ".cache/oxlint",
+          "--config",
+          "oxlint.json",
+          "--threads",
+          "1",
+          "--no-ignore",
+          "--disable-nested-config",
+          "-A",
+          "all",
+          "-D",
+          "unicorn/no-multiple-promise-resolver-calls",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/small-mixed/fixture-0.js"
+        ],
+        "eslint": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--no-config-lookup",
+          "--config",
+          "eslint.config.mjs",
+          "--no-ignore",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/small-mixed/fixture-0.js"
+        ]
+      },
+      "rawMilliseconds": {
+        "oxlint": [
+          5.816708, 5.36675, 6.810542, 5.477917, 6.990917, 7.554334, 9.503125, 6.287708, 6.312416,
+          8.16, 6.756167, 11.029625, 12.798625, 11.409833, 7.369917, 7.089791, 18.330583, 7.181125,
+          5.950666, 6.686541
+        ],
+        "eslint": [
+          537.006666, 487.131334, 519.17075, 464.217708, 575.800709, 758.554542, 679.549417,
+          499.51375, 628.636625, 799.310166, 689.975792, 654.25125, 705.720959, 710.473084,
+          743.464333, 624.927417, 576.61825, 757.323625, 648.00975, 532.942666
+        ]
+      },
+      "executionOrder": [
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 18.958875
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 586.212291
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 600.375292
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 9.384125
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 6.637583
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 652.918041
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 537.006666
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.816708
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.36675
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 487.131334
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 519.17075
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.810542
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.477917
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 464.217708
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 575.800709
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.990917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.554334
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 758.554542
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 679.549417
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.503125
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.287708
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 499.51375
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 628.636625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.312416
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 8.16
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 799.310166
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 689.975792
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.756167
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.029625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 654.25125
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 705.720959
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.798625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.409833
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 710.473084
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 743.464333
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.369917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.089791
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 624.927417
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 576.61825
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 18.330583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 7.181125
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 757.323625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 648.00975
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 5.950666
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 6.686541
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 532.942666
+        }
+      ],
+      "statistics": {
+        "oxlint": {
+          "min": 5.36675,
+          "q1": 6.306239,
+          "median": 7.040354,
+          "q3": 8.49578125,
+          "max": 18.330583
+        },
+        "eslint": {
+          "min": 464.217708,
+          "q1": 535.990666,
+          "median": 638.3231875,
+          "q3": 706.90899025,
+          "max": 799.310166
+        }
+      },
+      "ratioOfMedians": 90.6663482404436
+    },
+    {
+      "name": "large-clean",
+      "files": [
+        {
+          "name": "fixture-0.js",
+          "bytes": 53202,
+          "sha256": "d348828d4a865fd5f292eaf84ff7803f62081250928498c27e9ba413989ac01e",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-1.js",
+          "bytes": 53202,
+          "sha256": "77f92f6cc9d7bf3430cd54238cd4320310e1f0a583f9d24b32d4f1acc4e7cc4d",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-2.js",
+          "bytes": 53202,
+          "sha256": "9a9a3a54359720aa80034aa05901c9680d76f68f9b31d6045e3b12980797e678",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-3.js",
+          "bytes": 53202,
+          "sha256": "c598337a55c7e754d19b53784725eac12ecf12c973830e7ac0eebc0f052676c4",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-4.js",
+          "bytes": 53202,
+          "sha256": "4f094c8c25615618629efb242933dbc57ff50ded263d03e990d42f6ae4f1ce6e",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-5.js",
+          "bytes": 53202,
+          "sha256": "f414d77cad4ee858d3d6b539c23c09990fb04f139f67f15c638d6dfeb8f356e4",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-6.js",
+          "bytes": 53202,
+          "sha256": "9d32296ef93eda70d9ac97ec7d0b259d4a94d0764813e60deb3203f291428afb",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-7.js",
+          "bytes": 53202,
+          "sha256": "b9011bf784f2f7cd528f8e9e9cadb6a8918712ff862730760c36cf18f82f2fb4",
+          "expectedDiagnostics": 0
+        }
+      ],
+      "expectedDiagnostics": 0,
+      "columnDifferences": [],
+      "argv": {
+        "oxlint": [
+          ".cache/oxlint",
+          "--config",
+          "oxlint.json",
+          "--threads",
+          "1",
+          "--no-ignore",
+          "--disable-nested-config",
+          "-A",
+          "all",
+          "-D",
+          "unicorn/no-multiple-promise-resolver-calls",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-7.js"
+        ],
+        "eslint": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--no-config-lookup",
+          "--config",
+          "eslint.config.mjs",
+          "--no-ignore",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-clean/fixture-7.js"
+        ]
+      },
+      "rawMilliseconds": {
+        "oxlint": [
+          14.401875, 17.425208, 12.821917, 10.435041, 11.968125, 9.973041, 10.52325, 10.316375,
+          14.206125, 10.235042, 15.31475, 10.462917, 15.83125, 9.741958, 12.942875, 9.799292,
+          10.72375, 10.46625, 10.502666, 9.670583
+        ],
+        "eslint": [
+          1500.033209, 1066.005625, 763.029042, 761.56175, 800.493459, 757.33275, 774.996291,
+          747.629208, 779.262667, 754.610875, 786.555166, 860.830541, 874.979084, 829.336292,
+          818.299583, 762.139042, 743.421292, 746.282666, 770.261542, 738.56775
+        ]
+      },
+      "executionOrder": [
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 15.79875
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 1427.165834
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 1619.685875
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 16.830958
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 14.415708
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 1309.602584
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 1500.033209
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.401875
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.425208
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 1066.005625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 763.029042
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.821917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.435041
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 761.56175
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 800.493459
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.968125
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.973041
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 757.33275
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 774.996291
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.52325
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.316375
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 747.629208
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 779.262667
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.206125
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.235042
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 754.610875
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 786.555166
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.31475
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.462917
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 860.830541
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 874.979084
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.83125
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.741958
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 829.336292
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 818.299583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.942875
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.799292
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 762.139042
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 743.421292
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.72375
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.46625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 746.282666
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 770.261542
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.502666
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.670583
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 738.56775
+        }
+      ],
+      "statistics": {
+        "oxlint": {
+          "min": 9.670583,
+          "q1": 10.29604175,
+          "median": 10.512958000000001,
+          "q3": 13.2586875,
+          "max": 17.425208
+        },
+        "eslint": {
+          "min": 738.56775,
+          "q1": 756.65228125,
+          "median": 772.6289165000001,
+          "q3": 821.05876025,
+          "max": 1500.033209
+        }
+      },
+      "ratioOfMedians": 73.49300896094134
+    },
+    {
+      "name": "large-mixed",
+      "files": [
+        {
+          "name": "fixture-0.js",
+          "bytes": 48418,
+          "sha256": "2d5f64e3cd9f055f34cd1179eb901c6e768faf732c90d70baa1df65de95a8c57",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-1.js",
+          "bytes": 48418,
+          "sha256": "65c7bba52b326b4e69c1ccac846b3db2da7bebaf3da8cd4279c7215058247429",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-2.js",
+          "bytes": 48418,
+          "sha256": "3015a048ba623c260b5f8a08683049711474774738df2b3a6bf03ee92740d6f7",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-3.js",
+          "bytes": 48418,
+          "sha256": "e4120933878cdc80ac2619a893f5558030e777500a3b2175fc3e84a927b4d30e",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-4.js",
+          "bytes": 48418,
+          "sha256": "b1f93dc7232b3f2fa397bccd1fb91d0a5a0be0ab8b826a0e6454cbecc25d4c97",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-5.js",
+          "bytes": 48418,
+          "sha256": "12ad9dca415aae62557a6b622be5ec82ebf4d1610dd02b31d34bcfa50672c4aa",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-6.js",
+          "bytes": 48418,
+          "sha256": "ff6306e0190f482f3b80c47f9825f1789bbb6423fa8bdcf53386d5fdf504bf3f",
+          "expectedDiagnostics": 128
+        },
+        {
+          "name": "fixture-7.js",
+          "bytes": 48418,
+          "sha256": "6da59bf32a00028168fb2b0fc10413295a67b729ad3a30e322d7868dd1b1bea7",
+          "expectedDiagnostics": 128
+        }
+      ],
+      "expectedDiagnostics": 1024,
+      "columnDifferences": [],
+      "argv": {
+        "oxlint": [
+          ".cache/oxlint",
+          "--config",
+          "oxlint.json",
+          "--threads",
+          "1",
+          "--no-ignore",
+          "--disable-nested-config",
+          "-A",
+          "all",
+          "-D",
+          "unicorn/no-multiple-promise-resolver-calls",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-7.js"
+        ],
+        "eslint": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--no-config-lookup",
+          "--config",
+          "eslint.config.mjs",
+          "--no-ignore",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-mixed/fixture-7.js"
+        ]
+      },
+      "rawMilliseconds": {
+        "oxlint": [
+          21.57475, 15.64775, 15.805208, 27.045792, 16.832459, 17.373875, 19.790667, 18.94125,
+          16.737875, 14.474667, 15.900709, 14.0445, 20.308167, 16.750459, 17.535959, 14.383625,
+          17.052292, 17.711375, 14.642667, 15.918042
+        ],
+        "eslint": [
+          916.932334, 848.971292, 861.636833, 872.121417, 885.256917, 880.478625, 893.64775,
+          896.047792, 890.188583, 859.7395, 913.097542, 992.121083, 881.628333, 864.012292,
+          865.886625, 855.134667, 865.563708, 871.6195, 854.907625, 905.225
+        ]
+      },
+      "executionOrder": [
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 14.871584
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 732.733292
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 730.840458
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 12.675584
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 11.928917
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 839.141375
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 916.932334
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 21.57475
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.64775
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 848.971292
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 861.636833
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.805208
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 27.045792
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 872.121417
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 885.256917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 16.832459
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.373875
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 880.478625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 893.64775
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 19.790667
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 18.94125
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 896.047792
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 890.188583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 16.737875
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.474667
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 859.7395
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 913.097542
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.900709
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.0445
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 992.121083
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 881.628333
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 20.308167
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 16.750459
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 864.012292
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 865.886625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.535959
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.383625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 855.134667
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 865.563708
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.052292
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.711375
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 871.6195
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 854.907625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 14.642667
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.918042
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 905.225
+        }
+      ],
+      "statistics": {
+        "oxlint": {
+          "min": 14.0445,
+          "q1": 15.7658435,
+          "median": 16.791459,
+          "q3": 18.018843750000002,
+          "max": 27.045792
+        },
+        "eslint": {
+          "min": 848.971292,
+          "q1": 863.41842725,
+          "median": 876.300021,
+          "q3": 894.2477604999999,
+          "max": 992.121083
+        }
+      },
+      "ratioOfMedians": 52.18724715940408
+    },
+    {
+      "name": "large-non-target",
+      "files": [
+        {
+          "name": "fixture-0.js",
+          "bytes": 51762,
+          "sha256": "42d0b522126d604fcb6d0e6a80df510016b208840e2bb7bda9edd607073fc3de",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-1.js",
+          "bytes": 51762,
+          "sha256": "b06dea5b6e4e6b91d73edeb243ccd2516d83aa8dbd4821c48bd7087164de0887",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-2.js",
+          "bytes": 51762,
+          "sha256": "49911784f4db7666c8480228f08bcc6701ff342c61d1d262202a81bc0e3c75d3",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-3.js",
+          "bytes": 51762,
+          "sha256": "6a22f144beae8e25f9392a2b1697a0e94bfe1f210c1257bff09612f48a546941",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-4.js",
+          "bytes": 51762,
+          "sha256": "26cced7fcf46e2a33208865d64c5dce0f317171e0290df4138af26376f44c90d",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-5.js",
+          "bytes": 51762,
+          "sha256": "0050dbbac7ee53e49256c7c0297097a93545cbd33c8e38c791acc859c5b8e955",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-6.js",
+          "bytes": 51762,
+          "sha256": "c81c3774d28f3e33db7497fcd8d2d88a907f5cd796097527a30be3f741ad3e32",
+          "expectedDiagnostics": 0
+        },
+        {
+          "name": "fixture-7.js",
+          "bytes": 51762,
+          "sha256": "cfb19257a5ba56979e5cad32b6a4a688e53f870fc7abf6b8c0c5cd2d6aa49d5e",
+          "expectedDiagnostics": 0
+        }
+      ],
+      "expectedDiagnostics": 0,
+      "columnDifferences": [],
+      "argv": {
+        "oxlint": [
+          ".cache/oxlint",
+          "--config",
+          "oxlint.json",
+          "--threads",
+          "1",
+          "--no-ignore",
+          "--disable-nested-config",
+          "-A",
+          "all",
+          "-D",
+          "unicorn/no-multiple-promise-resolver-calls",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-7.js"
+        ],
+        "eslint": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--no-config-lookup",
+          "--config",
+          "eslint.config.mjs",
+          "--no-ignore",
+          "--format",
+          "json",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-0.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-1.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-2.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-3.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-4.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-5.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-6.js",
+          ".cache/fixtures/run-7PjoPV/large-non-target/fixture-7.js"
+        ]
+      },
+      "rawMilliseconds": {
+        "oxlint": [
+          15.170208, 12.0005, 10.837875, 10.128916, 17.304333, 9.613792, 19.993, 11.227292,
+          10.81525, 11.690083, 11.255791, 12.601, 12.243416, 12.500708, 10.073958, 12.484875,
+          12.243041, 11.729417, 16.558583, 11.954542
+        ],
+        "eslint": [
+          832.357583, 835.246917, 879.529917, 836.616291, 855.77725, 939.805459, 927.957375,
+          837.704958, 839.3175, 855.410958, 869.450167, 846.298584, 867.422583, 883.045083,
+          837.68625, 849.781625, 862.102958, 814.741416, 796.431416, 893.628
+        ]
+      },
+      "executionOrder": [
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 10.801875
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 840.830042
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 872.542291
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 11.477375
+        },
+        {
+          "tool": "oxlint",
+          "phase": "warmup",
+          "milliseconds": 10.36975
+        },
+        {
+          "tool": "eslint",
+          "phase": "warmup",
+          "milliseconds": 852.379708
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 832.357583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 15.170208
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.0005
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 835.246917
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 879.529917
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.837875
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.128916
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 836.616291
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 855.77725
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 17.304333
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 9.613792
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 939.805459
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 927.957375
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 19.993
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.227292
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 837.704958
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 839.3175
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.81525
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.690083
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 855.410958
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 869.450167
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.255791
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.601
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 846.298584
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 867.422583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.243416
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.500708
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 883.045083
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 837.68625
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 10.073958
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.484875
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 849.781625
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 862.102958
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 12.243041
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.729417
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 814.741416
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 796.431416
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 16.558583
+        },
+        {
+          "tool": "oxlint",
+          "phase": "sample",
+          "milliseconds": 11.954542
+        },
+        {
+          "tool": "eslint",
+          "phase": "sample",
+          "milliseconds": 893.628
+        }
+      ],
+      "statistics": {
+        "oxlint": {
+          "min": 9.613792,
+          "q1": 11.12993775,
+          "median": 11.977521,
+          "q3": 12.525781,
+          "max": 19.993
+        },
+        "eslint": {
+          "min": 796.431416,
+          "q1": 837.41876025,
+          "median": 852.5962915,
+          "q3": 871.9701044999999,
+          "max": 939.805459
+        }
+      },
+      "ratioOfMedians": 71.1830345778563
+    }
+  ],
+  "finishedAt": "2026-11-09T17:56:15.432Z"
+}
