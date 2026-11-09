@@ -9,6 +9,7 @@ use oxc_ecmascript::{
     GlobalContext,
     side_effects::{
         MayHaveSideEffects, MayHaveSideEffectsContext, PropertyReadSideEffects, is_pure_function,
+        is_pure_global_constructor, is_valid_array_buffer,
     },
 };
 use oxc_parser::Parser;
@@ -1711,5 +1712,45 @@ fn throwing_buffer_lengths_and_uri_arguments() {
         "encodeURIComponent(123)",
     ] {
         test(source, false);
+    }
+}
+
+#[test]
+fn builtin_constructor_invocation_and_argument_effects() {
+    // Invocation purity must not hide effects from evaluating arguments. In
+    // particular, `void foo()` has a known value but still calls `foo`.
+    for (source, invocation_is_pure, expression_has_effects) in [
+        ("new ArrayBuffer(8)", true, false),
+        ("new ArrayBuffer(void foo())", true, true),
+        ("new ArrayBuffer({ n: foo() })", true, true),
+        ("new ArrayBuffer(-1)", false, true),
+        ("new ArrayBuffer(8, undefined)", false, true),
+        ("new RegExp('x')", true, false),
+        ("new RegExp('x', 'g', foo())", true, true),
+        ("new RegExp('[')", false, true),
+        ("new Number(void foo())", true, true),
+        ("new Date(0n)", false, true),
+    ] {
+        let allocator = Allocator::default();
+        let ret = Parser::new(&allocator, source, SourceType::mjs()).parse();
+        assert!(ret.diagnostics.is_empty(), "{source}");
+        let Statement::ExpressionStatement(stmt) = &ret.program.body[0] else { panic!("{source}") };
+        let Expression::NewExpression(expr) = &stmt.expression else { panic!("{source}") };
+        let ident = expr.callee.get_identifier_reference().unwrap();
+        let ctx = Ctx::default();
+        assert_eq!(
+            is_pure_global_constructor(ident.name.as_str(), &expr.arguments, &ctx),
+            invocation_is_pure,
+            "{source}"
+        );
+        assert_eq!(expr.may_have_side_effects(&ctx), expression_has_effects, "{source}");
+        if ident.name == "ArrayBuffer" {
+            // The existing public helper includes argument evaluation.
+            assert_eq!(
+                is_valid_array_buffer(&expr.arguments, &ctx),
+                !expression_has_effects,
+                "{source}"
+            );
+        }
     }
 }
