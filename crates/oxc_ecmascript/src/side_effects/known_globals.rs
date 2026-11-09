@@ -22,7 +22,7 @@ use super::context::MayHaveSideEffectsContext;
 
 /// Whether ToIndex succeeds for a known length, with no options argument.
 /// Backing-store allocation failures are ignored under the minifier's allocation assumption.
-fn is_valid_array_buffer_length<'a>(args: &[Argument<'a>], ctx: &impl GlobalContext<'a>) -> bool {
+fn is_valid_array_buffer<'a>(args: &[Argument<'a>], ctx: &impl GlobalContext<'a>) -> bool {
     let value = match args {
         [] => return true,
         [arg] => {
@@ -204,7 +204,7 @@ pub fn is_pure_global_constructor<'a>(
     match name {
         // ToString(Symbol) and ToNumeric(Symbol) throw. Both constructors accept BigInt.
         "String" | "Number" => !first_arg_may_be_symbol(args, ctx),
-        "ArrayBuffer" => is_valid_array_buffer_length(args, ctx),
+        "ArrayBuffer" => is_valid_array_buffer(args, ctx),
         // Date's ToNumber conversion also throws on BigInt.
         "Date" => args.first().is_none_or(|arg| {
             arg.as_expression()
